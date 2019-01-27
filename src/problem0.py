@@ -209,9 +209,11 @@ def problem0a(n):
     import math
     x = sum_of_digits(n)
     remainder = x % 2
+    print(x, remainder)
     if remainder == 0:
+        answer = False
+    else:
         answer = True
-    answer = False
     return answer
 
 
