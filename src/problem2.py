@@ -189,7 +189,7 @@ def problem2b(rect, n, delta, win):
       :type win:    rg.RoseWindow
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # done: 3. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
     # -------------------------------------------------------------------------
@@ -197,6 +197,19 @@ def problem2b(rect, n, delta, win):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   15 to 25 minutes.
     # -------------------------------------------------------------------------
+    rect.attach_to(win)
+    center=rect.get_center()
+    corner1 = rect.get_upper_left_corner()
+
+    corner2 = rect.get_lower_right_corner()
+    for k in range(n-1):
+        corner1.x = corner1.x - delta
+        corner1.y = corner1.y - delta
+        corner2.x = corner2.x + delta
+        corner2.y = corner2.y + delta
+        newrectangle = rg.Rectangle(corner1, corner2)
+        newrectangle.attach_to(win)
+    win.render()
 
 
 # -----------------------------------------------------------------------------
